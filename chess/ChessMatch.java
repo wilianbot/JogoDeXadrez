@@ -1,6 +1,9 @@
 package jogoDeXadrez.chess;
 
 import jogoDeXadrez.boardgame.Board;
+import jogoDeXadrez.boardgame.Position;
+import jogoDeXadrez.chess.pieces.King;
+import jogoDeXadrez.chess.pieces.Rook;
 
 public class ChessMatch {
     private Board board;
@@ -21,6 +24,12 @@ public class ChessMatch {
         }
         return mat; // Retorna a Matriz de peça da partida de xadrez
     }    
+
+    private void initialSetup(){
+        board.placePiece(new Rook(board, Color.WHITE), new Position(2, 1));
+        board.placePiece(new King(board, Color.BLACK), new Position(0, 4));
+        board.placePiece(new King(board, Color.WHITE), new Position(7, 4));
+    }
 
 
 }
